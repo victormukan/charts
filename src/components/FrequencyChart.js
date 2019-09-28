@@ -21,15 +21,13 @@ export default function FrequencyChart() {
   });
 
   return (
-    <div className="flex-container">
-      <div className="centered">
-        <Chart
-          options={state.options}
-          series={state.series}
-          type="bar"
-          width="1000"
-        />
-      </div>
+    <div className="centered">
+      <Chart
+        options={state.options}
+        series={state.series}
+        type="bar"
+        width="1000"
+      />
     </div>
   );
 }

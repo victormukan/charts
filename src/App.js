@@ -5,8 +5,10 @@ import Table from './components/Table'
 
 const App = () =>  (
   <div className="app">
-    <Table />
-    <FrequencyChart />
+    <div className="flex-container">        
+      <Table />
+      <FrequencyChart />
+    </div>
   </div>
 );
 

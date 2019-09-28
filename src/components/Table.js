@@ -10,7 +10,7 @@ import { chartData } from './file'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '100%',
+    width: '35%',
     marginVertical: theme.spacing(3),
     overflowX: 'auto',
   },
@@ -24,29 +24,25 @@ export default function SimpleTable() {
 
   return (
     <Paper className={classes.root}>
-      <Table className={classes.table}>
+      <Table 
+        className={classes.table}
+        size="small"
+      >
         <TableHead>
           <TableRow>
             <TableCell>Letter</TableCell>
-            {chartData.map(i => (
-              <TableCell>{i.key}</TableCell>
-            ))}
+            <TableCell>Repeats</TableCell>
+            <TableCell>Frequency</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
-            <TableCell>Repeats</TableCell>
-            {chartData.map(i => (
+          {chartData.map(i => (
+            <TableRow>
+              <TableCell>{i.key}</TableCell>
               <TableCell>{i.value}</TableCell>
-            ))}
-          </TableRow>
-
-          <TableRow>
-            <TableCell>Frequency</TableCell>
-            {chartData.map(i => (
               <TableCell>{i.frequency}</TableCell>
+            </TableRow>
             ))}
-          </TableRow>
         </TableBody>
       </Table>
     </Paper>
