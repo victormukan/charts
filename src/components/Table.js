@@ -6,7 +6,6 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { chartData } from './file'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SimpleTable() {
+export default function SimpleTable({ chartData }) {
   const classes = useStyles();
 
   return (

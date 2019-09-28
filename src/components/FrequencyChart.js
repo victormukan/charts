@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import '../App.css';
 import Chart from 'react-apexcharts';
-import { chartData } from './file'
 
 
-export default function FrequencyChart() {
+export default function FrequencyChart({ chartData }) {
   const [state] = useState({
     options: {
       chart: {
