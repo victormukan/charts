@@ -3,28 +3,30 @@ import '../App.css';
 import Chart from 'react-apexcharts';
 
 
-export default function FrequencyChart({ imageStats }) {
-  const data = {
+export default function FrequencyChart({ chartData }) {
+  const [state] = useState({
     options: {
       chart: {
         id: 'basic-bar'
       },
       xaxis: {
-        categories: ['red', 'green', 'blue']
+        categories: chartData.map(i => i.key)
       }
     },
     series: [{
-      name: 'color possibility',
-      data: [imageStats.redPossibility, imageStats.greenPossibility, imageStats.bluePossibility]
+      name: 'letter frequency',
+      data: chartData.map(i => i.frequency)
     }]
-  };
+  });
 
   return (
-    <Chart
-      options={data.options}
-      series={data.series}
-      type="bar"
-      width="1000"
-    />
+    <div className="centered">
+      <Chart
+        options={state.options}
+        series={state.series}
+        type="bar"
+        width="1000"
+      />
+    </div>
   );
 }
